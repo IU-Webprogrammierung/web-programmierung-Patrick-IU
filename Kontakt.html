@@ -4,14 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontakt</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
         
     <!--- Header -->
     <header>
+        <nav>
+            <a href="index.html">
+            <!-- Not final Logo -->
+            <img
+                src="/Assets/Me.jpeg"
+                alt="ein Avatar-Bild von Patrick" title="Ein Avatar-Bild von Patrick"
+                width="100"
+            />
+            </a>
+            <a href="/Essen_Blog-Seite.html">Essen</a>
+            <a href="/Reisen_Blog-Seite.html">Reisen</a>
+            <a href="/Inspiration_Galerie.html">Inspiration</a>
+            <a href="Kontakt.html">Kontakt</a>
+        </nav>
         <h1>Kontakt</h1>
     </header>
 
+    <!---Formular und Social Media Links-->
+    <h2>Ich freue mich von dir zu hören</h2><br>
+    <p>Du hast Fragen, oder möchtest was los werden? Dann schreib mir einfach. Ich versuche alle Nachrichten so schnell wie Möglich zu beantworten. Falls es etwas länger dauert, bitte ich um etwas Geduld! Wenn es dir aber nicht schnell genug geht, dann klick auf die Social Media Links. Ich freue mich von dir zu hören.</p><br>
+
+    <form>
+        <label for="Name">Name:</label>
+        <input type="text" id="Name" name="Name" required>
+
+        <label for="Name">E-Mail:</label>
+        <input type="text" id="Name" name="Name" required>
+
+        <label for="message">Deine Nachricht:</label>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Schreib mir was..."
+        ></textarea>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <section>
+        <h2>Finde mich auf Social Media</h2>
+        <a href="#" target="_blank"
+            aria-label="Mein Instagram-Profil">Instagram</a>
+        <a href="#" target="_blank"
+            aria-label="Mein LinkedIn-Profil">LinkedIn</a>
+    </section>
+
+    <!--- Footer -->
+    <footer>
+        <p> <a href="/Kontakt.html">Impressum</a> </p>
+        <p> <a href="/Kontakt.html">Kontakt</a> </p>
+    </footer> 
 
 </body>
 </html>
