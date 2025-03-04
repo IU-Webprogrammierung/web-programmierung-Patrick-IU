@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,60 +9,68 @@
 </head>
 
 <body>
-        
-    <!--- Header -->
+
+    <!-- Header mit Navigation -->
     <header>
-        <nav>
+        <nav aria-label="Hauptnavigation">
             <a href="index.html">
-            <!-- Not final Logo -->
-            <img
-                src="/Assets/Me.jpeg"
-                alt="ein Avatar-Bild von Patrick" title="Ein Avatar-Bild von Patrick"
-                width="100"
-            />
+                <img src="/Assets/Me.jpeg" alt="Avatar-Bild von Patrick" title="Avatar-Bild von Patrick" width="100">
             </a>
-            <a href="/Essen_Blog-Seite.html">Essen</a>
-            <a href="/Reisen_Blog-Seite.html">Reisen</a>
-            <a href="/Inspiration_Galerie.html">Inspiration</a>
-            <a href="Kontakt.html">Kontakt</a>
+            <ul>
+                <li><a href="/Essen_Blog-Seite.html">Essen</a></li>
+                <li><a href="/Reisen_Blog-Seite.html">Reisen</a></li>
+                <li><a href="/Inspiration_Galerie.html">Inspiration</a></li>
+                <li><a href="/Kontakt.html">Kontakt</a></li>
+            </ul>
         </nav>
         <h1>Kontakt</h1>
     </header>
 
-    <!---Formular und Social Media Links-->
-    <h2>Ich freue mich von dir zu hören</h2><br>
-    <p>Du hast Fragen, oder möchtest was los werden? Dann schreib mir einfach. Ich versuche alle Nachrichten so schnell wie Möglich zu beantworten. Falls es etwas länger dauert, bitte ich um etwas Geduld! Wenn es dir aber nicht schnell genug geht, dann klick auf die Social Media Links. Ich freue mich von dir zu hören.</p><br>
+    <!-- Hauptinhalt -->
+    <main>
 
-    <form>
-        <label for="Name">Name:</label>
-        <input type="text" id="Name" name="Name" required>
+        <!-- Kontaktformular -->
+        <section aria-labelledby="contact-form">
+            <h2 id="contact-form">Ich freue mich, von dir zu hören</h2>
+            <p>Du hast Fragen oder möchtest mir etwas mitteilen? Dann schreib mir einfach. Ich versuche, alle Nachrichten so schnell wie möglich zu beantworten. Falls es etwas länger dauert, bitte ich um Geduld! Wenn es dir nicht schnell genug geht, dann kontaktiere mich über Social Media. Ich freue mich auf deine Nachricht!</p>
 
-        <label for="Name">E-Mail:</label>
-        <input type="text" id="Name" name="Name" required>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
 
-        <label for="message">Deine Nachricht:</label>
-        <textarea
-          id="message"
-          name="message"
-          placeholder="Schreib mir was..."
-        ></textarea>
+                <label for="email">E-Mail:</label>
+                <input type="email" id="email" name="email" required>
 
-        <input type="submit" value="Submit">
-    </form>
+                <label for="message">Deine Nachricht:</label>
+                <textarea id="message" name="message" placeholder="Schreib mir was..." required></textarea>
 
-    <section>
-        <h2>Finde mich auf Social Media</h2>
-        <a href="#" target="_blank"
-            aria-label="Mein Instagram-Profil">Instagram</a>
-        <a href="#" target="_blank"
-            aria-label="Mein LinkedIn-Profil">LinkedIn</a>
-    </section>
+                <input type="submit" value="Absenden">
+            </form>
+        </section>
 
-    <!--- Footer -->
+        <!-- Social Media Links -->
+        <section aria-labelledby="social-media">
+            <h2 id="social-media">Finde mich auf Social Media</h2>
+            <p>Falls du lieber über Social Media Kontakt aufnehmen möchtest, findest du mich hier:</p>
+            <ul>
+                <li><a href="#" target="_blank" aria-label="Mein Instagram-Profil">Instagram</a></li>
+                <li><a href="#" target="_blank" aria-label="Mein LinkedIn-Profil">LinkedIn</a></li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
     <footer>
-        <p> <a href="/Kontakt.html">Impressum</a> </p>
-        <p> <a href="/Kontakt.html">Kontakt</a> </p>
-    </footer> 
+        <nav aria-label="Footer-Navigation">
+            <ul>
+                <li><a href="/Kontakt.html">Impressum</a></li>
+                <li><a href="/Kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2024 Patrick – 4 Years in China</p>
+    </footer>
 
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,55 +9,75 @@
 </head>
 
 <body>
-    <!--- Header -->
+
+    <!-- Header mit Navigation -->
     <header>
-        <nav>
+        <nav aria-label="Hauptnavigation">
             <a href="index.html">
-            <!-- Not final Logo -->
-            <img
-                src="/Assets/Me.jpeg"
-                alt="Ein Avatar-Bild von Patrick" title="Ein Avatar-Bild von Patrick"
-                width="100"
-            />
+                <img src="/Assets/Me.jpeg" alt="Avatar-Bild von Patrick" title="Avatar-Bild von Patrick" width="100">
             </a>
-            <a href="/Essen_Blog-Seite.html">Essen</a>
-            <a href="/Reisen_Blog-Seite.html">Reisen</a>
-            <a href="/Inspiration_Galerie.html">Inspiration</a>
-            <a href="Kontakt.html">Kontakt</a>
+            <ul>
+                <li><a href="/Essen_Blog-Seite.html">Essen</a></li>
+                <li><a href="/Reisen_Blog-Seite.html">Reisen</a></li>
+                <li><a href="/Inspiration_Galerie.html">Inspiration</a></li>
+                <li><a href="/Kontakt.html">Kontakt</a></li>
+            </ul>
         </nav>
         <h1>Essen</h1>
     </header>
 
-    <!--- Blog -->
-    <section>
-        <img src="/Assets/Kalte_Nudeln.jpeg" alt="Holzschale mit hellen breiten Nudeln, die mit verschiedenem Gemüse und Tofu gemischt sind" title="Holzschale mit hellen breiten Nudeln, die mit verschiedenem Gemüse und Tofu gemischt sind">
-        <h2>Kalte Nudeln</h2>
-        <p>Man findet sie fast überall in der warmen Jahreszeit und das hat auch seinen Grund. Meist handgemachte Weizennudeln mit rohem Gemüse und dazu ein säuerlich scharfes und ziemlich knoblauchlastiges Dressing.</p>
-    </section>
+    <!-- Hauptinhalt -->
+    <main>
 
-    <section>
-        <img src="/Assets/Korean-BBQ.jpeg" alt="Draufsicht auf einen großen Holztisch mit einem eingelassenem Tischgrill, auf dem Gemüse und Fleisch gegrillt wird. Daneben stehen mehrere Teller mit unterschiedlichen Lebensmitteln." title="Draufsicht auf einen großen Holztisch mit einem eingelassenem Tischgrill, auf dem Gemüse und Fleisch gegrillt wird. Daneben stehen mehrere Teller mit unterschiedlichen Lebensmitteln.">
-        <h2>Koreanisches BBQ</h2>
-        <p>In ganz China beliebt und deshalb überall zu finden ist das koreanische BBQ. Fleisch, Gemüse und jede menge anderer Sites erwartet einen. Es wird direkt auf dem Tisch gegrillt, damit jeder es so zubereiten kann, wie man es am liebsten hat. Aber Achtung: es wird heiß und dementsprechend wächst der Durst.</p>
-    </section>
+        <!-- Kalte Nudeln -->
+        <section id="kalte-nudeln" aria-labelledby="title-kalte-nudeln">
+            <h2 id="title-kalte-nudeln">Kalte Nudeln</h2>
+            <img src="/Assets/Kalte_Nudeln.jpeg" 
+                 alt="Holzschale mit breiten Weizennudeln, Gemüse und Tofu" 
+                 title="Traditionelle kalte Weizennudeln mit Gemüse und Tofu">
+            <p>Man findet sie fast überall in der warmen Jahreszeit, und das aus gutem Grund. Meist handgemachte Weizennudeln mit rohem Gemüse und einem säuerlich-scharfen, knoblauchlastigen Dressing.</p>
+        </section>
 
-    <section>
-        <img src="/Assets/Nudelsuppe.jpeg" alt="Ein kleiner Tisch auf dem eine aus Holz gefertigte Brücke steht, die zum Servieren verschiedener Lebensmitteln verwendet wird. Daneben steht eine große schwarze Suppenschüssle mit einer hellen Brühe." title="Ein kleiner Tisch auf dem eine aus Holz gefertigte Brücke steht, die zum Servieren verschiedener Lebensmitteln verwendet wird. Daneben steht eine große schwarze Suppenschüssle mit einer hellen Brühe.">
-        <h2>Nudelsuppe</h2>
-        <p>Im Süden Chinas in Lijiang ähnelt die Küche sehr stark der Vietnamesischen. Auf Food Markets wird einem die Suppe mit Resinudeln angerichtet und man wählt selbst, was man gerne dazu möchte. Koriander, Lachs, Eier, Tofu, verschiedene Salate und vor allem unterschiedliche scharfe Pasten/Gewürze.</p>
-    </section>
+        <!-- Koreanisches BBQ -->
+        <section id="korean-bbq" aria-labelledby="title-korean-bbq">
+            <h2 id="title-korean-bbq">Koreanisches BBQ</h2>
+            <img src="/Assets/Korean-BBQ.jpeg" 
+                 alt="Tisch mit eingebautem Grill, auf dem Gemüse und Fleisch gegrillt werden" 
+                 title="Koreanisches BBQ – Fleisch und Gemüse direkt am Tisch grillen">
+            <p>In ganz China beliebt und deshalb überall zu finden: das koreanische BBQ. Fleisch, Gemüse und zahlreiche Beilagen stehen zur Auswahl. Es wird direkt auf dem Tisch gegrillt, damit jeder es nach seinem Geschmack zubereiten kann. Aber Achtung: Es wird heiß, und der Durst wächst entsprechend.</p>
+        </section>
 
-    <section>
-        <img src="/Assets/Changsha.jpeg" alt="Auf einer weißen Tischplatte stehen 4 große weiße Schüsseln gefüllt mit 4 verschiedenen chinesischen Fleisch und Gemüse Gerichten." title="Auf einer weißen Tischplatte stehen 4 große weiße Schüsseln gefüllt mit 4 verschiedenen chinesischen Fleisch und Gemüse Gerichten.">
-        <h2>Fleischtöpfe</h2>
-        <p>In Changsha, Provinz Hunan wir ebenfalls sehr scharf gegessen. Für Gäste wird oft ein Topf mit Hackfleisch und Lauch bereitet, der dann mit Reis gegessen wird.</p>
-    </section>
+        <!-- Nudelsuppe -->
+        <section id="nudelsuppe" aria-labelledby="title-nudelsuppe">
+            <h2 id="title-nudelsuppe">Nudelsuppe</h2>
+            <img src="/Assets/Nudelsuppe.jpeg" 
+                 alt="Tisch mit Holzbrücke als Servierplatte und einer großen Schüssel heller Brühe" 
+                 title="Vietnamesisch inspirierte Nudelsuppe aus Südchina">
+            <p>Im südchinesischen Lijiang erinnert die Küche stark an die vietnamesische. Auf den Food Markets wird eine Suppe mit Reisnudeln serviert, bei der jeder selbst wählen kann, was er dazu haben möchte: Koriander, Lachs, Eier, Tofu, verschiedene Salate und vor allem würzige Pasten und Gewürze.</p>
+        </section>
 
-    <!--- Footer -->
+        <!-- Fleischtöpfe -->
+        <section id="fleischtöpfe" aria-labelledby="title-fleischtöpfe">
+            <h2 id="title-fleischtöpfe">Fleischtöpfe</h2>
+            <img src="/Assets/Changsha.jpeg" 
+                 alt="Vier große Schüsseln mit verschiedenen chinesischen Fleisch- und Gemüsegerichten" 
+                 title="Chinesische Fleischtöpfe aus Changsha">
+            <p>In Changsha, Provinz Hunan, wird besonders scharf gegessen. Für Gäste wird oft ein herzhaft gewürzter Topf mit Hackfleisch und Lauch serviert, der mit Reis gegessen wird. Perfekt für Liebhaber der scharfen chinesischen Küche.</p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
     <footer>
-        <p> <a href="/Kontakt.html">Impressum</a> </p>
-        <p> <a href="/Kontakt.html">Kontakt</a> </p>
+        <nav aria-label="Footer-Navigation">
+            <ul>
+                <li><a href="/Kontakt.html">Impressum</a></li>
+                <li><a href="/Kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2024 Patrick – 4 Years in China</p>
     </footer>
 
 </body>
+
 </html>
