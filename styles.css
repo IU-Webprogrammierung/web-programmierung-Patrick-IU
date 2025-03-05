@@ -1,0 +1,240 @@
+/* Allgemeine Stile */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: #333;
+}
+
+/* Layout-Anpassung */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+
+/* Hero-Section */
+.hero {
+    position: relative;
+    width: 100%;
+    max-width: 1920px;
+    height: 56.25vw; /* 16:9 Verhältnis */
+    max-height: 600px; /* Begrenzung für große Bildschirme */
+    display: flex;
+    justify-content: center; /* Zentriert den Text vertikal */
+    align-items: center; /* Zentriert den Text horizontal */
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* Overlay für besseren Kontrast */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dunkles Overlay */
+    z-index: 1;
+}
+
+/* Hintergrundbild */
+.hero img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Hero-Text */
+.hero-text {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Titel & Untertitel */
+.hero-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+}
+
+
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+
+
+/* Hauptinhalt */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Über mich - Section */
+.about-me {
+    display: flex;
+    flex-direction: column; /* Immer Spaltenanordnung */
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* Bild */
+.about-me img {
+    width: 150px; /* Kleinere Größe */
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px; /* Abstand zum Text */
+}
+
+.about-me-text {
+    max-width: 800px;
+}
+
+
+/* Container für Reisen und Essen -section */
+.content-section-startpage {
+    display: flex;
+    align-items: center; /* Zentriert Inhalte vertikal */
+    height: 450px; /* Begrenzung der Höhe */
+    margin: 20px auto; /* Abstand nach oben und unten + zentriert */
+    max-width: 1000px; /* Maximale Breite */
+    width: 100%; /* Anpassung für kleinere Bildschirme */
+    overflow: hidden; /* Verhindert, dass Inhalte überstehen */
+    gap: 40px; /* Abstand zwischen Bild und Text */
+}
+
+/* Container für das Bild (links) */
+.content-image-startpage {
+    flex: 1; /* Bild nimmt 50% des Platzes ein */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Stellt sicher, dass das Bild nicht übersteht */
+    max-height: 300px; /* Bild darf max. 300px hoch sein */
+}
+
+/* Bild selbst */
+.content-image-startpage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Bild bleibt proportional und zeigt nur einen Ausschnitt */
+}
+
+/* Container für den Text (rechts) */
+.content-text-startpage {
+    flex: 1; /* Text nimmt 50% des Platzes ein */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+/* Mobile Anpassungen für ≤ 600px */
+@media (max-width: 600px) {
+    .content-section-startpage {
+        flex-direction: column; /* Bild und Text stapeln */
+        height: auto; /* Höhe dynamisch */
+        gap: 10px; /* Kleinere Lücke zwischen Bild & Text */
+    }
+
+    .content-image-startpage {
+        width: 100%; /* Bild nimmt die volle Breite */
+        height: 250px; /* Kleinere Höhe für mobile Ansicht */
+    }
+
+    .content-text-startpage {
+        text-align: center; /* Zentriert den Text für mobile Ansicht */
+        align-items: center;
+        width: 100%;
+    }
+}
+
+
+/* Buttons */
+button {
+    background-color: #ff4500;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #cc3700;
+}
+
+/* Footer */
+footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+}
