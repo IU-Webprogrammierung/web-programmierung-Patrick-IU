@@ -1,4 +1,27 @@
-/* Allgemeine Stile */
+
+/*******************************************************
+*
+
+INHALT
+1. Allgemeine Stile
+2. Buttons
+3. Navigation
+4. Hero-Section
+5. Titel Unterseiten
+6. Hauptinhalt
+  6.1 Über mich (Startseite
+  6.2 Container für Reisen und Essen (Startseite)
+  6.3 Blog-Kachel Container (Blog-Seiten)
+  6.3 Galerie
+10. Responsive Design
+
+*
+*******************************************************/
+
+
+
+
+/*****     Allgemeine Stile     *****/
 body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
@@ -14,9 +37,58 @@ body {
     padding: 0 20px;
 }
 
+/* Buttons */
+button {
+    background-color: #ff4500;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #cc3700;
+}
 
 
-/* Hero-Section */
+
+/*****    Navigation    *****/
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+/* Logo in der Navigation vergrößern */
+nav a img {
+    width: 110px; /* Größere Breite */
+    height: auto; /* Proportionale Höhe beibehalten */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+
+
+/*****     Hero-Section     *****/
 .hero {
     position: relative;
     width: 100%;
@@ -65,9 +137,9 @@ body {
 
 /* Titel & Untertitel */
 .hero-text h1 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
 .hero-text p {
@@ -76,35 +148,29 @@ body {
 
 
 
-/* Navigation */
-nav {
+/*****     Titel Unterseiten     *****/
+.page-title {
+    position: relative;
+    z-index: 2;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 10px 20px;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    display: inline;
-}
-
-nav a {
-    text-decoration: none;
-    color: #333;
+/* Titel & Untertitel der Unterseiten*/
+.page-title h1 {
+    font-size: 2.5rem;
     font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.page-title p {
+    font-size: 1.2rem;
 }
 
 
 
-/* Hauptinhalt */
+/*****     Hauptinhalt     *****/
 main {
     display: flex;
     flex-direction: column;
@@ -112,7 +178,7 @@ main {
     padding: 20px;
 }
 
-/* Über mich - Section */
+/*****     Über mich - Section     *****/
 .about-me {
     display: flex;
     flex-direction: column; /* Immer Spaltenanordnung */
@@ -121,7 +187,7 @@ main {
     padding: 50px 20px;
 }
 
-/* Bild */
+/* Über mich Bild */
 .about-me img {
     width: 150px; /* Kleinere Größe */
     height: 150px;
@@ -134,7 +200,7 @@ main {
 }
 
 
-/* Container für Reisen und Essen -section */
+/*****     Container für Reisen und Essen -section Startseite     *****/
 .content-section-startpage {
     display: flex;
     align-items: center; /* Zentriert Inhalte vertikal */
@@ -146,7 +212,7 @@ main {
     gap: 40px; /* Abstand zwischen Bild und Text */
 }
 
-/* Container für das Bild (links) */
+/* Container für das Bild Startseite */
 .content-image-startpage {
     flex: 1; /* Bild nimmt 50% des Platzes ein */
     display: flex;
@@ -163,7 +229,7 @@ main {
     object-fit: cover; /* Bild bleibt proportional und zeigt nur einen Ausschnitt */
 }
 
-/* Container für den Text (rechts) */
+/* Container für den Text Startseite */
 .content-text-startpage {
     flex: 1; /* Text nimmt 50% des Platzes ein */
     display: flex;
@@ -172,7 +238,125 @@ main {
     text-align: left;
 }
 
-/* Mobile Anpassungen für ≤ 600px */
+
+
+
+/*****     Blog-Kachel Container     *****/
+.blog-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Kacheln mittig ausrichten */
+    gap: 20px; /* Abstand zwischen den Kacheln */
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Einzelne Blog-Kachel */
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 350px; /* Begrenzung der maximalen Breite */
+    transition: transform 0.3s ease-in-out;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px); /* Leichter Hover-Effekt */
+}
+
+/* Bild innerhalb der Kachel */
+.blog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Inhalt der Kachel */
+.blog-card-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.blog-card-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.blog-card-content p {
+    font-size: 1rem;
+    color: #555;
+}
+
+
+/*****     Galerie     *****/
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 8px;
+  }
+  
+/* Drei gleich große Spalten */
+.column {
+    flex: 30%;
+    max-width: 30%;
+    padding: 0 8px;
+}
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+
+
+
+/*****     Footer     *****/
+footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 20px;
+}
+
+
+
+
+/*****     Responsive Design     ******/
+
+/* Responsive Design Navigation*/
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+/* Responsive Design main*/
+    main {
+        padding: 10px;
+    }
+
+/* Responsive Design Hero*/
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+/* Responsive Design für Reisen und Essen -section Startseite */
 @media (max-width: 600px) {
     .content-section-startpage {
         flex-direction: column; /* Bild und Text stapeln */
@@ -192,49 +376,170 @@ main {
     }
 }
 
-
-/* Buttons */
-button {
-    background-color: #ff4500;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-button:hover {
-    background-color: #cc3700;
-}
-
-/* Footer */
-footer {
-    background-color: #f1f1f1;
-    text-align: center;
-    padding: 20px;
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-    nav {
-        flex-direction: column;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    main {
-        padding: 10px;
-    }
-
-    .hero-text h1 {
+/* Responsive Design Titel Unterseiten */
+    .page-title h1 {
         font-size: 1.8rem;
     }
 
-    .hero-text p {
+    .page-title p {
         font-size: 1rem;
     }
+
+/* Responsive Design Kacheln */
+@media (max-width: 768px) {
+    .blog-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .blog-card {
+        width: 90%;
+    }
+}
+}
+
+/* Responsive Design - Galerie */
+  @media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*****     Kontaktseite     *****/
+
+/* Zentrierte Überschrift und Einleitungstext */
+#contact-intro {
+    text-align: center;
+    max-width: 800px; /* Begrenzt die Breite für bessere Lesbarkeit */
+    margin: auto; /* Zentriert den gesamten Abschnitt */
+    padding: 20px;
+}
+
+/* Kontaktformular */
+#contact-form {
+    display: flex;
+    justify-content: center; /* Zentriert das Formular */
+    align-items: center;
+    width: 100%; /* Stellt sicher, dass es nicht beschränkt wird */
+    max-width: 100%; /* Verhindert unnötige Einschränkungen */
+    padding: 20px;
+}
+
+/* Formular mit garantierten 800px Breite */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px; /* ERZWINGT 800px Breite */
+    width: 100%; /* Stellt sicher, dass es sich auf kleineren Bildschirmen anpasst */
+    padding: 30px; /* Mehr Innenabstand */
+    background: #f9f9f9; /* Leichtes Grau für Kontrast */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Verhindert Überlaufen der Elemente */
+}
+
+/* Labels */
+form label {
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: left; /* Links ausgerichtet für bessere Lesbarkeit */
+}
+
+/* Eingabefelder */
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Stellt sicher, dass die Breite inkl. Padding zählt */
+}
+
+/* Textarea anpassen */
+form textarea {
+    min-height: 150px;
+    resize: vertical; /* Nutzer kann die Höhe anpassen */
+}
+
+/* Senden-Button */
+form input[type="submit"] {
+    background-color: #ff4500;
+    color: white;
+    font-size: 1rem;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+form input[type="submit"]:hover {
+    background-color: #cc3700;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 900px) {
+    form {
+        max-width: 90%; /* Breite auf 90% begrenzen für mittlere Bildschirme */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    form {
+        width: 95%; /* Breite anpassen für kleine Bildschirme */
+        padding: 15px;
+    }
+}
+
+/*****     Social Media Bereich     *****/
+
+#social-media {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+/* Social Media Icons in einer flexiblen Zeile */
+#social-media ul {
+    list-style: none;
+    margin-top: 40px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Abstand zwischen den Icons */
+}
+
+/* Einzelne Listenelemente */
+#social-media ul li {
+    display: inline-block;
+}
+
+/* Social Media Icons */
+#social-media ul li a img {
+    width: 50px; /* Einheitliche Größe für alle Icons */
+    height: 50px;
+    object-fit: contain; /* Stellt sicher, dass Logos korrekt angezeigt werden */
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Hover-Effekt für bessere Interaktivität */
+#social-media ul li a:hover img {
+    transform: scale(1.1); /* Leichte Vergrößerung beim Überfahren */
 }

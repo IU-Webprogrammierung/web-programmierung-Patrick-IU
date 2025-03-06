@@ -14,8 +14,8 @@
     <header>
         <nav aria-label="Hauptnavigation">
             <a href="index.html">
-                <img src="/Assets/Me.jpeg" alt="Avatar-Bild von Patrick" title="Avatar-Bild von Patrick" width="100">
-            </a>
+                <img src="/Assets/Logo.png" alt="Logo von 4 Years in China" title="4 Years in China" width="100">
+              </a>
             <ul>
                 <li><a href="/Essen_Blog-Seite.html">Essen</a></li>
                 <li><a href="/Reisen_Blog-Seite.html">Reisen</a></li>
@@ -23,49 +23,69 @@
                 <li><a href="/Kontakt.html">Kontakt</a></li>
             </ul>
         </nav>
-        <h1>Reisen</h1>
+        <div class="page-title">
+            <h1>Reisen</h1>
+            <p>Die schönsten Ecken in China und das Beste drumherum</p>
+        </div>
     </header>
+
+
 
     <!-- Hauptinhalt -->
     <main>
-
-        <!-- Philippinen -->
-        <section id="philippinen" aria-labelledby="title-philippinen">
-            <h2 id="title-philippinen">In 3 ½ Stunden nach Manila</h2>
-            <img src="/Assets/Philipinen.jpeg" 
-                 alt="Tropischer Strand mit zwei Bäumen, die eine Hängematte beschatten" 
-                 title="Strand auf den Philippinen mit Hängematte und Liegen">
-            <p>Von Shanghai geht es in weniger als vier Stunden auf die Philippinen. Von Manila aus erreicht man fast alle Gegenden auf der Hauptinsel mit dem Taxi. Was einen erwartet, sind unglaublich nette Menschen und traumhafte Strände.</p>
+        <!-- Kacheln -->
+        <section class="blog-grid">
+            <!-- Philipinen -->
+            <article class="blog-card">
+                <img src="/Assets/Philipinen.jpeg"
+                    alt="Tropischer Strand mit zwei Bäumen, die eine Hängematte beschatten"
+                    title="Strand auf den Philippinen mit Hängematte und Liegen">
+                <div class="blog-card-content">
+                    <h2>In 3 ½ Stunden nach Manila</h2>
+                    <p>Von Shanghai geht es in weniger als vier Stunden auf die Philippinen. Von Manila aus erreicht man
+                        fast alle Gegenden auf der Hauptinsel mit dem Taxi. Was einen erwartet, sind unglaublich nette
+                        Menschen und traumhafte Strände.</p>
+                </div>
+            </article>
+            <!-- Taiwan -->
+            <article class="blog-card">
+                <img src="/Assets/Taipeh.jpeg"
+                    alt="Aussicht von einer Terrasse auf die Skyline von Taipeh mit Bergen im Hintergrund"
+                    title="Blick auf Taipeh von einer Aussichtsterrasse">
+                <div class="blog-card-content">
+                    <h2>Taiwan ist ein Muss</h2>
+                    <p>Hitze, hohe Luftfeuchtigkeit, ein vibrierendes Nachtleben, Streetfood, Kultur im Überfluss und
+                        eine herrliche Natur zum Wandern und Baden – Taiwan bietet alles auf kleinstem Raum.</p>
+                </div>
+            </article>
+            <!-- Tokio -->
+            <article class="blog-card">
+                <img src="/Assets/Tokio.jpeg"
+                    alt="Menschen in einer Einkaufsstraße mit japanischen Schriftzeichen, im Hintergrund der Fernsehturm von Tokio"
+                    title="Einkaufsstraße in Tokio mit vielen Menschen">
+                <div class="blog-card-content">
+                    <h2>Das Wochenende in Tokio</h2>
+                    <p>Bei einer Flugzeit von unter drei Stunden lädt Tokio zu einem Wochenendtrip ein. Wer jetzt aber
+                        denkt, damit hätte er Tokio von der Bucketlist gestrichen, irrt sich. Auch ein zweites, drittes
+                        und viertes Wochenende werden nicht genug sein.</p>
+                </div>
+            </article>
+            <!-- Bangkok -->
+            <article class="blog-card">
+                <img src="/Assets/Bangkok.jpeg"
+                    alt="Bunte Marktstände mit Sonnenschirmen in einer Einkaufsstraße in Bangkok"
+                    title="Markt in Bangkok mit vielen bunten Ständen">
+                <div class="blog-card-content">
+                    <h2>Eine Reise nach Thailand beginnt mit Bangkok</h2>
+                    <p>Zumindest sollte sie das meiner Meinung nach. Die Stadt bietet alles im Überfluss und ist der
+                        perfekte Kontrast, um sich danach in der Ruhe und Abgeschiedenheit eines der vielen Strände zu
+                        entspannen.</p>
+                </div>
+            </article>
         </section>
-
-        <!-- Taiwan -->
-        <section id="taiwan" aria-labelledby="title-taiwan">
-            <h2 id="title-taiwan">Taiwan ist ein Muss</h2>
-            <img src="/Assets/Taipeh.jpeg" 
-                 alt="Aussicht von einer Terrasse auf die Skyline von Taipeh mit Bergen im Hintergrund" 
-                 title="Blick auf Taipeh von einer Aussichtsterrasse">
-            <p>Hitze, hohe Luftfeuchtigkeit, ein vibrierendes Nachtleben, Streetfood, Kultur im Überfluss und eine herrliche Natur zum Wandern und Baden – Taiwan bietet alles auf kleinstem Raum.</p>
-        </section>
-
-        <!-- Tokio -->
-        <section id="tokio" aria-labelledby="title-tokio">
-            <h2 id="title-tokio">Das Wochenende in Tokio</h2>
-            <img src="/Assets/Tokio.jpeg" 
-                 alt="Menschen in einer Einkaufsstraße mit japanischen Schriftzeichen, im Hintergrund der Fernsehturm von Tokio" 
-                 title="Einkaufsstraße in Tokio mit vielen Menschen">
-            <p>Bei einer Flugzeit von unter drei Stunden lädt Tokio zu einem Wochenendtrip ein. Wer jetzt aber denkt, damit hätte er Tokio von der Bucketlist gestrichen, irrt sich. Auch ein zweites, drittes und viertes Wochenende werden nicht genug sein.</p>
-        </section>
-
-        <!-- Bangkok -->
-        <section id="bangkok" aria-labelledby="title-bangkok">
-            <h2 id="title-bangkok">Eine Reise nach Thailand beginnt mit Bangkok</h2>
-            <img src="/Assets/Bangkok.jpeg" 
-                 alt="Bunte Marktstände mit Sonnenschirmen in einer Einkaufsstraße in Bangkok" 
-                 title="Markt in Bangkok mit vielen bunten Ständen">
-            <p>Zumindest sollte sie das meiner Meinung nach. Die Stadt bietet alles im Überfluss und ist der perfekte Kontrast, um sich danach in der Ruhe und Abgeschiedenheit eines der vielen Strände zu entspannen.</p>
-        </section>
-
     </main>
+
+
 
     <!-- Footer -->
     <footer>
