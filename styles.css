@@ -1,27 +1,31 @@
-
 /*******************************************************
-*
+ *
+ * STYLESHEET: 4 YEARS IN CHINA
+ * 
+ * Inhaltsverzeichnis:
+ * 
+ * 1. Allgemeine Stile
+ * 2. Buttons
+ * 3. Navigation
+ * 4. Hero-Section
+ * 5. Titel auf Unterseiten
+ * 6. Hauptinhalt
+ * 7. Startseite
+ * 8. Blogseiten
+ * 9. Galerieseite
+ * 10. Kontaktseite
+ * 11. Social Media Bereich
+ * 12. Footer
+ *
+ *******************************************************/
 
-INHALT
-1. Allgemeine Stile
-2. Buttons
-3. Navigation
-4. Hero-Section
-5. Titel Unterseiten
-6. Hauptinhalt
-  6.1 Über mich (Startseite
-  6.2 Container für Reisen und Essen (Startseite)
-  6.3 Blog-Kachel Container (Blog-Seiten)
-  6.3 Galerie
-10. Responsive Design
-
-*
-*******************************************************/
 
 
 
 
-/*****     Allgemeine Stile     *****/
+/* 1. Allgemeine Stile
+--------------------------------------------------------------------------------- */
+
 body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
@@ -37,7 +41,10 @@ body {
     padding: 0 20px;
 }
 
-/* Buttons */
+
+/* 2. Buttons
+--------------------------------------------------------------------------------- */
+
 button {
     background-color: #ff4500;
     color: white;
@@ -53,57 +60,125 @@ button:hover {
 }
 
 
+/* 3. Navigation
+--------------------------------------------------------------------------------- */
 
-/*****    Navigation    *****/
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 15px 40px; /* Anpassung für bessere Höhe */
+    position: relative;
+    height: 70px; /* Einheitliche Höhe für Logo & Burger */
 }
 
-/* Logo in der Navigation vergrößern */
-nav a img {
-    width: 110px; /* Größere Breite */
-    height: auto; /* Proportionale Höhe beibehalten */
+/* Logo in der Navigation */
+.logo {
+    display: flex;
+    align-items: center;
 }
 
-nav ul {
+.logo img {
+    width: 110px;
+    height: auto;
+}
+
+/* Standard-Navigation */
+.nav-links {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 20px;
     padding: 0;
     margin: 0;
+    align-items: center;
 }
 
-nav ul li {
+.nav-links li {
     display: inline;
 }
 
-nav a {
+.nav-links a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
 }
 
+/* Burger-Menü (mobil) */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.burger-menu div {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+}
+
+/* Responsive Design für Navigation */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    /* Standard-Navigation ausblenden */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: white;
+        width: 200px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        z-index: 10;
+        text-align: right;
+    }
+
+    /* Aktives Menü */
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin-bottom: 10px;
+    }
+}
 
 
-/*****     Hero-Section     *****/
+/* 4. Hero-Section
+--------------------------------------------------------------------------------- */
+
 .hero {
     position: relative;
     width: 100%;
     max-width: 1920px;
-    height: 56.25vw; /* 16:9 Verhältnis */
-    max-height: 600px; /* Begrenzung für große Bildschirme */
+    height: 56.25vw;
+    max-height: 600px;
     display: flex;
-    justify-content: center; /* Zentriert den Text vertikal */
-    align-items: center; /* Zentriert den Text horizontal */
+    justify-content: center;
+    align-items: center;
     text-align: center;
     color: white;
     overflow: hidden;
 }
 
-/* Overlay für besseren Kontrast */
+/* Overlay */
 .hero::after {
     content: "";
     position: absolute;
@@ -111,7 +186,7 @@ nav a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dunkles Overlay */
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
@@ -146,9 +221,21 @@ nav a {
     font-size: 1.2rem;
 }
 
+/* Responsive Design Hero */
+@media (max-width: 600px) {
+    .hero-text h1 {
+    font-size: 1.8rem;
+}
+
+.hero-text p {
+    font-size: 1rem;
+}
+}
 
 
-/*****     Titel Unterseiten     *****/
+/* 5. Titel Unterseiten
+--------------------------------------------------------------------------------- */
+
 .page-title {
     position: relative;
     z-index: 2;
@@ -168,9 +255,22 @@ nav a {
     font-size: 1.2rem;
 }
 
+/* Responsive Design Titel Unterseiten */
+@media (max-width: 600px) {
+    .page-title h1 {
+    font-size: 1.8rem;
+}
+
+.page-title p {
+    font-size: 1rem;
+    text-align: center;
+}
+}
 
 
-/*****     Hauptinhalt     *****/
+/* 6. Hauptinhalt
+--------------------------------------------------------------------------------- */
+
 main {
     display: flex;
     flex-direction: column;
@@ -178,10 +278,19 @@ main {
     padding: 20px;
 }
 
+/* Responsive Design main */
+main {
+    padding: 10px;
+}
+
+
+/* 7. Startseite
+--------------------------------------------------------------------------------- */
+
 /*****     Über mich - Section     *****/
 .about-me {
     display: flex;
-    flex-direction: column; /* Immer Spaltenanordnung */
+    flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 50px 20px;
@@ -189,10 +298,10 @@ main {
 
 /* Über mich Bild */
 .about-me img {
-    width: 150px; /* Kleinere Größe */
+    width: 150px;
     height: 150px;
     object-fit: cover;
-    margin-bottom: 20px; /* Abstand zum Text */
+    margin-bottom: 20px;
 }
 
 .about-me-text {
@@ -203,50 +312,70 @@ main {
 /*****     Container für Reisen und Essen -section Startseite     *****/
 .content-section-startpage {
     display: flex;
-    align-items: center; /* Zentriert Inhalte vertikal */
-    height: 450px; /* Begrenzung der Höhe */
-    margin: 20px auto; /* Abstand nach oben und unten + zentriert */
-    max-width: 1000px; /* Maximale Breite */
-    width: 100%; /* Anpassung für kleinere Bildschirme */
-    overflow: hidden; /* Verhindert, dass Inhalte überstehen */
-    gap: 40px; /* Abstand zwischen Bild und Text */
+    align-items: center;
+    height: 450px;
+    margin: 20px auto;
+    max-width: 1000px;
+    width: 100%;
+    overflow: hidden;
+    gap: 40px;
 }
 
 /* Container für das Bild Startseite */
 .content-image-startpage {
-    flex: 1; /* Bild nimmt 50% des Platzes ein */
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Stellt sicher, dass das Bild nicht übersteht */
-    max-height: 300px; /* Bild darf max. 300px hoch sein */
+    overflow: hidden;
+    max-height: 300px;
 }
 
-/* Bild selbst */
+/* Bild Startseite */
 .content-image-startpage img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Bild bleibt proportional und zeigt nur einen Ausschnitt */
+    object-fit: cover;
 }
 
 /* Container für den Text Startseite */
 .content-text-startpage {
-    flex: 1; /* Text nimmt 50% des Platzes ein */
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: left;
 }
 
+/* Responsive Design für Reisen und Essen -section Startseite */
+@media (max-width: 600px) {
+    .content-section-startpage {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+    }
+
+    .content-image-startpage {
+        width: 100%;
+        height: 250px;
+    }
+
+    .content-text-startpage {
+        text-align: center;
+        align-items: center;
+        width: 100%;
+    }
+}
 
 
+/* 8. Blogseiten
+--------------------------------------------------------------------------------- */
 
-/*****     Blog-Kachel Container     *****/
 .blog-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Kacheln mittig ausrichten */
-    gap: 20px; /* Abstand zwischen den Kacheln */
+    justify-content: center;
+    gap: 20px;
     padding: 20px;
     max-width: 1200px;
     margin: auto;
@@ -262,12 +391,12 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 100%;
-    max-width: 350px; /* Begrenzung der maximalen Breite */
+    max-width: 350px;
     transition: transform 0.3s ease-in-out;
 }
 
 .blog-card:hover {
-    transform: translateY(-5px); /* Leichter Hover-Effekt */
+    transform: translateY(-5px);
 }
 
 /* Bild innerhalb der Kachel */
@@ -293,8 +422,22 @@ main {
     color: #555;
 }
 
+/* Responsive Design Kacheln */
+@media (max-width: 768px) {
+    .blog-grid {
+        flex-direction: column;
+        align-items: center;
+    }
 
-/*****     Galerie     *****/
+    .blog-card {
+        width: 90%;
+    }
+}
+
+
+/* 9. Galerieseite
+--------------------------------------------------------------------------------- */
+
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -317,126 +460,24 @@ main {
   }
 
 
-
-
-/*****     Footer     *****/
-footer {
-    background-color: #f1f1f1;
-    text-align: center;
-    padding: 20px;
-}
-
-
-
-
-/*****     Responsive Design     ******/
-
-/* Responsive Design Navigation*/
-@media (max-width: 600px) {
-    nav {
-        flex-direction: column;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-/* Responsive Design main*/
-    main {
-        padding: 10px;
-    }
-
-/* Responsive Design Hero*/
-    .hero-text h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero-text p {
-        font-size: 1rem;
-    }
-
-/* Responsive Design für Reisen und Essen -section Startseite */
-@media (max-width: 600px) {
-    .content-section-startpage {
-        flex-direction: column; /* Bild und Text stapeln */
-        height: auto; /* Höhe dynamisch */
-        gap: 10px; /* Kleinere Lücke zwischen Bild & Text */
-    }
-
-    .content-image-startpage {
-        width: 100%; /* Bild nimmt die volle Breite */
-        height: 250px; /* Kleinere Höhe für mobile Ansicht */
-    }
-
-    .content-text-startpage {
-        text-align: center; /* Zentriert den Text für mobile Ansicht */
-        align-items: center;
-        width: 100%;
-    }
-}
-
-/* Responsive Design Titel Unterseiten */
-    .page-title h1 {
-        font-size: 1.8rem;
-    }
-
-    .page-title p {
-        font-size: 1rem;
-    }
-
-/* Responsive Design Kacheln */
-@media (max-width: 768px) {
-    .blog-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .blog-card {
-        width: 90%;
-    }
-}
-}
-
-/* Responsive Design - Galerie */
-  @media screen and (max-width: 600px) {
-    .column {
-      flex: 100%;
-      max-width: 100%;
-    }
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*****     Kontaktseite     *****/
+/* 10. Kontaktseite
+--------------------------------------------------------------------------------- */
 
 /* Zentrierte Überschrift und Einleitungstext */
 #contact-intro {
     text-align: center;
-    max-width: 800px; /* Begrenzt die Breite für bessere Lesbarkeit */
-    margin: auto; /* Zentriert den gesamten Abschnitt */
+    max-width: 800px;
+    margin: auto;
     padding: 20px;
 }
 
 /* Kontaktformular */
 #contact-form {
     display: flex;
-    justify-content: center; /* Zentriert das Formular */
+    justify-content: center;
     align-items: center;
-    width: 100%; /* Stellt sicher, dass es nicht beschränkt wird */
-    max-width: 100%; /* Verhindert unnötige Einschränkungen */
+    width: 100%;
+    max-width: 100%;
     padding: 20px;
 }
 
@@ -444,20 +485,20 @@ footer {
 form {
     display: flex;
     flex-direction: column;
-    max-width: 800px; /* ERZWINGT 800px Breite */
-    width: 100%; /* Stellt sicher, dass es sich auf kleineren Bildschirmen anpasst */
-    padding: 30px; /* Mehr Innenabstand */
-    background: #f9f9f9; /* Leichtes Grau für Kontrast */
+    max-width: 800px;
+    width: 100%;
+    padding: 30px;
+    background: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box; /* Verhindert Überlaufen der Elemente */
+    box-sizing: border-box;
 }
 
 /* Labels */
 form label {
     font-weight: bold;
     margin-top: 10px;
-    text-align: left; /* Links ausgerichtet für bessere Lesbarkeit */
+    text-align: left;
 }
 
 /* Eingabefelder */
@@ -468,13 +509,13 @@ form input, form textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
-    box-sizing: border-box; /* Stellt sicher, dass die Breite inkl. Padding zählt */
+    box-sizing: border-box;
 }
 
 /* Textarea anpassen */
 form textarea {
     min-height: 150px;
-    resize: vertical; /* Nutzer kann die Höhe anpassen */
+    resize: vertical;
 }
 
 /* Senden-Button */
@@ -497,18 +538,20 @@ form input[type="submit"]:hover {
 /* Responsive Design */
 @media screen and (max-width: 900px) {
     form {
-        max-width: 90%; /* Breite auf 90% begrenzen für mittlere Bildschirme */
+        max-width: 90%;
     }
 }
 
 @media screen and (max-width: 600px) {
     form {
-        width: 95%; /* Breite anpassen für kleine Bildschirme */
+        width: 95%;
         padding: 15px;
     }
 }
 
-/*****     Social Media Bereich     *****/
+
+/* 11. Social Media Bereich
+--------------------------------------------------------------------------------- */
 
 #social-media {
     text-align: center;
@@ -523,7 +566,7 @@ form input[type="submit"]:hover {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 20px; /* Abstand zwischen den Icons */
+    gap: 20px;
 }
 
 /* Einzelne Listenelemente */
@@ -533,13 +576,59 @@ form input[type="submit"]:hover {
 
 /* Social Media Icons */
 #social-media ul li a img {
-    width: 50px; /* Einheitliche Größe für alle Icons */
+    width: 50px;
     height: 50px;
-    object-fit: contain; /* Stellt sicher, dass Logos korrekt angezeigt werden */
+    object-fit: contain;
     transition: transform 0.2s ease-in-out;
 }
 
 /* Hover-Effekt für bessere Interaktivität */
 #social-media ul li a:hover img {
-    transform: scale(1.1); /* Leichte Vergrößerung beim Überfahren */
+    transform: scale(1.1);
+}
+
+
+/* 12. Footer
+--------------------------------------------------------------------------------- */
+
+footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Footer Navigation */
+footer nav {
+    margin-bottom: 10px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+footer ul li {
+    display: inline;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Responsive Footer */
+@media (max-width: 600px) {
+    footer ul {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
