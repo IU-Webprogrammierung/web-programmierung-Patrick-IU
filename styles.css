@@ -117,7 +117,7 @@ nav {
     transform: translateY(-50%);
 }
 
-.burger-menu div {
+.burger-menu .bar {
     width: 30px;
     height: 3px;
     background-color: #333;
