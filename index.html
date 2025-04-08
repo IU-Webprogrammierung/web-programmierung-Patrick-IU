@@ -23,7 +23,7 @@
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
-    </div>
+      </div>
 
       <ul class="nav-links">
         <li><a href="Essen_Blog-Seite.html">Essen</a></li>
@@ -35,8 +35,8 @@
   </header>
 
   <!-- Hauptbereich -->
-  <main>
-        
+  <main class="snap-wrapper">
+
     <!-- Hero und Titel -->
     <div class="hero">
       <img src="Assets/Heroimage_China.jpeg" alt="Hero-Bild von China mit Stadtansicht" title="Hero-Bild China">
@@ -46,8 +46,19 @@
       </div>
     </div>
 
+    <!-- Navigation innerhalb der Seite (Snap-Scrolling) -->
+    <section class="snap-intro">
+      <h2 class="snap-title">Springe direkt zum Abschnitt:</h2>
+      <div class="snap-nav">
+        <a href="#about"><button>Über mich</button></a>
+        <a href="#travel"><button>Reisen</button></a>
+        <a href="#food"><button>Essen</button></a>
+        <a href="#inspiration"><button>Inspiration</button></a>
+      </div>
+    </section>
+
     <!-- Über mich -->
-    <section class="about-me">
+    <section id="about" class="about-me">
       <img src="Assets/Me.jpeg" alt="Portraitfoto von Patrick" title="EIn Foto von Patrick">
       <div class="about-me-text">
         <h2>Hi, ich bin Patrick</h2>
@@ -63,7 +74,7 @@
     </section>
 
     <!-- Reisen -->
-    <section class="content-section-startpage">
+    <section id="travel" class="content-section-startpage">
       <div class="content-image-startpage">
         <img src="Assets/Suzhou_Mall.jpeg" alt="Sonnenuntergang über einer Einkaufsstraße mit hohen Gebäuden"
           title="Sonnenuntergang über Suzhou">
@@ -81,7 +92,7 @@
     </section>
 
     <!-- Essen -->
-    <section class="content-section-startpage">
+    <section id="food" class="content-section-startpage">
       <div class="content-image-startpage">
         <img src="Assets/Essen.jpeg" alt="Tisch mit drehbarer Glasplatte und verschiedenen chinesischen Gerichten"
           title="Traditionelle chinesische Speisen auf einem großen Tisch">
@@ -98,7 +109,8 @@
     </section>
 
     <!-- Inspiration -->
-    <section class="content-section-startpage">
+
+    <section id="inspiration" class="content-section-startpage">
       <div class="content-image-startpage">
         <img src="Assets/Shanghai-BBQ.jpeg"
           alt="Teller mit gegrillten Fleischspießen, Garnelen und Beilagen auf einem rustikalen Holztisch"
@@ -129,8 +141,8 @@
     <p>&copy; 2024 Patrick – 4 Years in China</p>
   </footer>
 
-<!-- To-the-Top Button -->
-<button id="toTopBtn" aria-label="Zurück nach oben">Top</button>
+  <!-- To-the-Top Button -->
+  <button id="toTopBtn" aria-label="Zurück nach oben">Top</button>
 
 </body>
 

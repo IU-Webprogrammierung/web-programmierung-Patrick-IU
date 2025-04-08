@@ -747,3 +747,57 @@ footer ul li a {
         transform: scale(1);
     }
 }
+
+
+/* 15. Snap-Scrolling & Section-Navigation
+--------------------------------------------------------------------------------- */
+
+/* Einführungstext über den Snap-Buttons */
+.snap-title {
+    text-align: center;
+    font-size: 1.0rem;
+    font-weight: bold;
+    margin: 40px 0 10px;
+    color: #333;
+}
+
+/* Sanftes Scrollverhalten für Ankerlinks */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Snap nur auf den sichtbaren Inhaltsbereich anwenden */
+.snap-wrapper {
+    scroll-snap-type: y mandatory;
+}
+
+/* Nur Sections innerhalb der Snap-Wrapper sollen einrasten */
+.snap-wrapper > section {
+    scroll-snap-align: start;
+    scroll-margin-top: 80px; /* gleicht Sticky-Header aus */
+}
+
+/* Navigationsleiste mit Scroll-Buttons unterhalb des Hero-Bereichs */
+.snap-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 20px;
+    flex-wrap: wrap;
+}
+
+/* Buttons in der Snap-Navigation */
+.snap-nav button {
+    background-color: #f9f9f9;
+    color: #000;
+    border: none;
+    padding: 10px 18px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.snap-nav button:hover {
+    background-color: #737373;
+}
