@@ -20,6 +20,7 @@
  * 14. To-the-Top Button (nur Desktop)
  * 15. Snap-Scrolling & Section-Navigation
  * 16. Print-Optimierung
+ * 17. Lightbox für Galerie
  *
  *******************************************************/
 
@@ -480,24 +481,24 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     padding: 0 8px;
-  }
-  
+}
+
 /* Drei gleich große Spalten */
 .column {
     flex: 30%;
     max-width: 30%;
     padding: 0 8px;
 }
-  
-  .column img {
+
+.column img {
     margin-top: 8px;
     vertical-align: middle;
     width: 100%;
     margin-bottom: 8px;
-  }
+}
 
 
-  /* Responsive Design Galerie */
+/* Responsive Design Galerie */
 @media (max-width: 600px) {
     .column {
         flex: 50%;
@@ -548,7 +549,8 @@ form label {
 }
 
 /* Eingabefelder */
-form input, form textarea {
+form input,
+form textarea {
     width: 100%;
     padding: 12px;
     margin-top: 5px;
@@ -760,10 +762,12 @@ footer ul li a {
         transform: scale(0.7);
         opacity: 0;
     }
+
     70% {
         transform: scale(1.3);
         opacity: 1;
     }
+
     100% {
         transform: scale(1);
     }
@@ -793,9 +797,10 @@ html {
 }
 
 /* Nur Sections innerhalb der Snap-Wrapper sollen einrasten */
-.snap-wrapper > section {
+.snap-wrapper>section {
     scroll-snap-align: start;
-    scroll-margin-top: 80px; /* gleicht Sticky-Header aus */
+    scroll-margin-top: 80px;
+    /* gleicht Sticky-Header aus */
 }
 
 /* Navigationsleiste mit Scroll-Buttons unterhalb des Hero-Bereichs */
@@ -828,13 +833,15 @@ html {
 --------------------------------------------------------------------------------- */
 
 @media print {
+
     /* Nur druckrelevante Inhalte sichtbar */
-    body, main {
-      background: white;
-      color: black;
-      font-size: 12pt;
+    body,
+    main {
+        background: white;
+        color: black;
+        font-size: 12pt;
     }
-  
+
     nav,
     footer,
     .burger-menu,
@@ -845,44 +852,98 @@ html {
     button,
     input,
     textarea {
-      display: none;
+        display: none;
     }
-  
+
     * {
-      box-shadow: none;
-      background: transparent;
+        box-shadow: none;
+        background: transparent;
     }
-  
+
     a {
-      color: black;
-      text-decoration: underline;
+        color: black;
+        text-decoration: underline;
     }
-  
+
     a::after {
-      content: " (" attr(href) ")";
-      font-size: 0.9em;
-      color: #555;
+        content: " (" attr(href) ")";
+        font-size: 0.9em;
+        color: #555;
     }
-  
-    h1, h2, h3,
+
+    h1,
+    h2,
+    h3,
     .blog-card {
-      page-break-inside: avoid;
+        page-break-inside: avoid;
     }
-  
+
     .row,
     .column,
     .blog-grid {
-      display: block;
-      width: 100%;
+        display: block;
+        width: 100%;
     }
-  
+
     img {
-      max-width: 100%;
-      height: auto;
+        max-width: 100%;
+        height: auto;
     }
-  
+
     main {
-      padding: 0 20px;
+        padding: 0 20px;
     }
-  }  
+}
+  
+  /* 17. Lightbox für Galerie
+--------------------------------------------------------------------------------- */
+
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.lightbox-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.lightbox-overlay.show {
+    display: flex;
+    animation: fadeInLightbox 0.3s ease;
+}
+  
+  @keyframes fadeInLightbox {
+      from {
+          opacity: 0;
+          transform: scale(0.95);
+      }
+
+      to {
+          opacity: 1;
+          transform: scale(1);
+      }
+  }
+
+  /* Hover-Effekt und Cursor für Galerie-Bilder */
+  .column img {
+      cursor: zoom-in;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .column img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
   

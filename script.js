@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Beim Scrollen prüfen, ob Button eingeblendet werden soll
     window.addEventListener("scroll", () => {
         if (window.scrollY > 300) {
-            toTopBtn.classList.add("show");  // Button einblenden
+            toTopBtn.classList.add("show"); // Button einblenden
         } else {
             toTopBtn.classList.remove("show"); // Button ausblenden
         }
@@ -42,4 +42,31 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 }); 
+
+
+/* 3. Lightbox für Galerie-Bilder
+--------------------------------------------------------------------------------- */
+
+document.addEventListener("DOMContentLoaded", function () {
+    const overlay = document.getElementById("lightboxOverlay"); // Overlay-Container
+    const overlayImg = overlay.querySelector("img"); // Bild im Overlay
+  
+    // Alle Bilder der Galerie durchgehen
+    document.querySelectorAll(".column img").forEach((img) => {
+      img.addEventListener("click", function () {
+        // Beim Klick: Bild in der Lightbox anzeigen
+        overlayImg.src = img.src;
+        overlayImg.alt = img.alt || "Bildansicht";
+        overlay.classList.add("show"); // Overlay einblenden
+      });
+    });
+  
+    // Klick auf das Overlay (Hintergrund) schließt die Lightbox
+    overlay.addEventListener("click", function () {
+      overlay.classList.remove("show"); // Overlay ausblenden
+      overlayImg.src = ""; // Bild zurücksetzen
+      overlayImg.alt = "";
+    });
+  });
+  
   
