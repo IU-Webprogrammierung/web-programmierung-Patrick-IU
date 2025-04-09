@@ -59,13 +59,20 @@
             <section id="contact-form" aria-labelledby="contact-title">
                 <form action="#" method="post">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Dein Name" required>
-
+                    <input type="text" id="name" name="name" placeholder="Dein Name" required
+                           title="Bitte gib deinen vollständigen Namen ein" aria-required="true" aria-describedby="nameHelp">
+                    <small id="nameHelp">Dein vollständiger Name</small>
+                    
                     <label for="email">E-Mail:</label>
-                    <input type="email" id="email" name="email" placeholder="Deine E-Mail" required>
-
+                    <input type="email" id="email" name="email" placeholder="Deine E-Mail" required
+                           title="Bitte gib eine gültige E-Mail-Adresse ein" aria-required="true" aria-describedby="emailHelp">
+                    <small id="emailHelp">z.B. dein.name@mail.de</small>
+                    
                     <label for="message">Deine Nachricht:</label>
-                    <textarea id="message" name="message" placeholder="Schreib mir was..." required></textarea>
+                    <textarea id="message" name="message" placeholder="Schreib mir was..." required
+                              title="Bitte schreibe eine Nachricht" aria-required="true" aria-describedby="messageHelp"></textarea>
+                    <small id="messageHelp">Maximal 1000 Zeichen</small>
+                    
 
                     <input type="submit" value="Absenden">
                 </form>
