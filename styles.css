@@ -18,6 +18,8 @@
  * 12. Fehlerseite (404)
  * 13. Footer
  * 14. To-the-Top Button (nur Desktop)
+ * 15. Snap-Scrolling & Section-Navigation
+ * 16. Print-Optimierung
  *
  *******************************************************/
 
@@ -820,3 +822,67 @@ html {
 .snap-nav button:hover {
     background-color: #737373;
 }
+
+
+/* 16. Print-Optimierung
+--------------------------------------------------------------------------------- */
+
+@media print {
+    /* Nur druckrelevante Inhalte sichtbar */
+    body, main {
+      background: white;
+      color: black;
+      font-size: 12pt;
+    }
+  
+    nav,
+    footer,
+    .burger-menu,
+    #toTopBtn,
+    .snap-nav,
+    .hero,
+    .hero-text,
+    button,
+    input,
+    textarea {
+      display: none;
+    }
+  
+    * {
+      box-shadow: none;
+      background: transparent;
+    }
+  
+    a {
+      color: black;
+      text-decoration: underline;
+    }
+  
+    a::after {
+      content: " (" attr(href) ")";
+      font-size: 0.9em;
+      color: #555;
+    }
+  
+    h1, h2, h3,
+    .blog-card {
+      page-break-inside: avoid;
+    }
+  
+    .row,
+    .column,
+    .blog-grid {
+      display: block;
+      width: 100%;
+    }
+  
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    main {
+      padding: 0 20px;
+    }
+  }  
+  
