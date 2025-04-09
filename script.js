@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
 /* 2. To-the-Top Button ein-/ausblenden & Funktion
 --------------------------------------------------------------------------------- */
 
@@ -40,4 +41,5 @@ document.addEventListener("DOMContentLoaded", () => {
             behavior: "smooth"
         });
     });
-});
+}); 
+  

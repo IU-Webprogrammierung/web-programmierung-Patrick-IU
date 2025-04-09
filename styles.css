@@ -595,20 +595,6 @@ form input[type="submit"]:hover {
     }
 }
 
-/* Validierungs-Feedback */
-form input:invalid,
-form textarea:invalid {
-  border-color: #cc0000;
-  background-color: #fff5f5;
-}
-
-/* Fokus-Feedback bei Fehlern */
-form input:invalid:focus,
-form textarea:invalid:focus {
-  outline: none;
-  box-shadow: 0 0 5px rgba(204, 0, 0, 0.4);
-}
-
 
 /* 11. Social Media Bereich
 --------------------------------------------------------------------------------- */
